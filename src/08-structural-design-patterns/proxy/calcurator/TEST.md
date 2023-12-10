@@ -1,0 +1,1 @@
+yarn run dev src/08-structural-design-patterns/index.ts 
