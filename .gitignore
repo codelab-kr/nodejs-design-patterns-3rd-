@@ -13,3 +13,7 @@
 .pnp.*
 
 **/db/*
+**/node_modules/*
+**/*tar
+**/*zip
+**/*gz
