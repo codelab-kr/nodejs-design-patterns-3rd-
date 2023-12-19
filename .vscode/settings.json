@@ -16,5 +16,6 @@
     "source.fixAll.prettier": "explicit"
   },
   "editor.formatOnSave": true,
-  "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs"
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs",
+  "explorer.incrementalNaming": "smart"
 }

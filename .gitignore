@@ -13,6 +13,7 @@
 .pnp.*
 
 **/db/*
+**/msgHistory/*
 **/node_modules/*
 **/*tar
 **/*zip

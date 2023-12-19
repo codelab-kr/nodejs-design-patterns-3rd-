@@ -7,5 +7,5 @@
   "ignore": [
       "src/**/*.spec.ts"  
   ],
-  "exec": "ts-node  --transpile-only"
+  "exec": "ts-node --transpile-only"
 }

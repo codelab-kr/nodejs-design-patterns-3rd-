@@ -1,0 +1,1 @@
+yarn dlx autocannon -c 200 -d 10 http://localhost:8080;

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Massages:
+    <div id="messages"></div>
+    <form id="msgform">
+      <input type="text" id="msgBox" placeholder="Send a message" />
+      <button type="submit" value="Send">Send</button>
+    </form>
+    <script>
+      const ws = new WebSocket(`ws://${window.location.host}`)
+      ws.onmessage = async function (message) {
+        const msgDiv = document.createElement('div')
+        msgDiv.innerHTML = await message.data.text()
+        document.getElementById('messages').appendChild(msgDiv)
+      }
+      const form = document.getElementById('msgform')
+      form.addEventListener('submit', function (event) {
+        event.preventDefault()
+        const message = document.getElementById('msgBox')
+        ws.send(msgBox.value)
+        msgBox.value = ''
+      })
+    </script>
+  </body>
+</html>
