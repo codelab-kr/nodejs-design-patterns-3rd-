@@ -1,0 +1,57 @@
+<h1>{{title}}</h1>
+
+<h2>{{article.title}}</h2>
+<div>
+  <p>Author: {{article.author}}</p>
+  <p>Views: {{article.views}}</p>
+  <p>Create At: {{article.createdAt}}</p>
+  <div>
+    <a href='/modify/{{article.id}}'>Modify</a>
+    <a href='/delete/{{article.id}}'>Delete</a>
+  </div>
+</div>
+</div>
+<div>
+  <p>{{{article.content}}}</p>
+</div>
+<section>
+  <div>
+    <h3>Comments</h3>
+    <p>There are {{article.comments.length}} comments.</p>
+  </div>
+  <form method="post" action="/write-comment">
+    <input type="hidden" name="articleId" value="{{article.id}}" />
+    <div>
+      <label for="author">Name</label>
+      <input type="text" name="author" id="author" />
+    </div>
+    <div>
+      <label for="author">Password</label>
+      <input type="password" name="password" id="password" />
+    </div>
+    <div>
+      <label for="content">Content</label>
+      <textarea name="content" id="content" cols="40" rows="3"></textarea>
+    </div>
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</section>
+<section>
+  {{#each article.comments}}
+  <div>
+    <div>Name: {{ author }} </div>
+    <div>Create At: {{ createdAt }}</div>
+    <button>Delete</button>
+  </div>
+  <div>
+    <pre>{{ content }}</pre>
+  </div>
+</section>
+{{/each}}
+<footer>
+<div>
+  <a href='/'>Go to List</a>
+</div>
+</footer>

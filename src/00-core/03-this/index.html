@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      'use strict'
+      var obj22 = {
+        outer: function () {
+          console.log('1', this)
+          console.log('2', this === obj22)
+          var innerFunc = function () {
+            console.log('3', this)
+            console.log('4', this === obj2)
+          }
+          innerFunc()
+
+          var obj2 = {
+            innerMethod: innerFunc
+          }
+          obj2.innerMethod()
+        }
+      }
+      obj22.outer()
+    </script>
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>

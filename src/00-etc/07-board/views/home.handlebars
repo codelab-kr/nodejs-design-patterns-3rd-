@@ -1,0 +1,44 @@
+<h1>{{title}}</h1>
+
+<!-- Search form -->
+<input type='text' name='search' placeholder='Search' />
+<button type='submit'>Search</button>
+<br />
+
+<!-- Go to Write form -->
+<a href='/write'>Write</a>
+<br />
+
+<!-- List of articles -->
+<div>
+  <h2>Articles</h2>
+  <p>There are {{articles.length}} articles.</p>
+</div>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>no</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Views</th>
+        <th>Create At</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each articles}}
+        <tr>
+          <td>{{id}}</td>
+          <td><a href='/view/{{id}}'>title</a></td>
+          <td align='canter'>{{author}}</td>
+          <td align='canter'>{{views}}</td>
+          <td align='canter'>{{createdAt}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+
+<!-- Pagination -->
+<div>
+</div>
